@@ -31,7 +31,7 @@ const OnlineChess = () => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const newSocket = io("https://fc0e-31-223-77-93.ngrok-free.app/", {
+    const newSocket = io("http://localhost:5001", {
       transports: ["websocket", "polling"],
     });
     setSocket(newSocket);
