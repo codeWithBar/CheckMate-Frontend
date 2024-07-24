@@ -31,9 +31,12 @@ const OnlineChess = () => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const newSocket = io("7.tcp.eu.ngrok.io:13345", {
-      transports: ["websocket", "polling"],
-    });
+    const newSocket = io(
+      "https://arcane-plains-21943-d89c6c112e53.herokuapp.com/",
+      {
+        transports: ["websocket", "polling"],
+      }
+    );
     setSocket(newSocket);
 
     newSocket.on("connect", () => {
